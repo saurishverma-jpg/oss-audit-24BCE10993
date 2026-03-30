@@ -1,42 +1,50 @@
-# Open Source Audit Project - VLC Media Player
+# OSS Audit — VLC Media Player
 
-## Student Details
-Name: Saurish Verma  
-Registration Number: 24BCE10993  
-
-## Project Description
-This project is part of the Open Source Software course. It involves analyzing an open-source software (VLC Media Player) and performing a structured audit based on its origin, license, Linux footprint, ecosystem, and comparison with proprietary software.
-
-The project also includes 5 shell scripts that demonstrate practical Linux skills and automation.
-
----
-
-## Software Chosen
-VLC Media Player
-
----
+**Student Name:** Saurish Verma
+**Registration Number:** 24BCE10993
+**Course:** Open Source Software
+**Chosen Software:** VLC Media Player
 
 ## Scripts Overview
 
-### 1. Script 1 - System Identity Report
-Displays system information such as kernel version, user, uptime, date, and Linux distribution.
+| Script | File | Purpose |
+|--------|------|---------|
+| 1 | script1.sh | System Identity Report — displays kernel, user, uptime, distro |
+| 2 | script2.sh | FOSS Package Inspector — checks if VLC is installed and shows version |
+| 3 | script3.sh | Disk and Permission Auditor — checks system directories |
+| 4 | script4.sh | Log File Analyzer — counts keyword occurrences in a log file |
+| 5 | script5.sh | Open Source Manifesto Generator — interactive philosophy generator |
 
-### 2. Script 2 - FOSS Package Inspector
-Checks whether VLC is installed and displays its version and description.
+## Environment Setup
 
-### 3. Script 3 - Disk and Permission Auditor
-Analyzes important system directories and shows their size, permissions, and ownership.
+- OS: Ubuntu 24.04 LTS (or any Debian-based Linux)
+- Shell: Bash
 
-### 4. Script 4 - Log File Analyzer
-Reads a log file, counts occurrences of a keyword (default: error), and displays matching lines.
-
-### 5. Script 5 - Open Source Manifesto Generator
-Takes user input and generates a personalized open-source manifesto saved in a text file.
-
----
-
-## How to Run the Scripts
-
-### Step 1: Give execution permission
+## Install Dependencies
 ```bash
-chmod +x script1.sh script2.sh script3.sh script4.sh script5.sh
+sudo apt update
+sudo apt install vlc
+```
+
+## How to Run
+```bash
+# Clone the repository
+git clone https://github.com/saurishverma-jpg/oss-audit-24BCE10993.git
+cd oss-audit-24BCE10993
+
+# Give execute permission to all scripts
+chmod +x *.sh
+
+# Run each script
+./script1.sh
+./script2.sh
+./script3.sh
+./script4.sh /var/log/syslog
+./script5.sh
+```
+
+## Notes
+
+- Script 4 requires a log file path as argument. Use `/var/log/syslog` on Ubuntu.
+- Script 5 is interactive — it will ask you 3 questions and generate a manifesto file.
+- All scripts were tested on Ubuntu 24.04.4 LTS inside VirtualBox.
